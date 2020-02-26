@@ -2,9 +2,9 @@
  * @Author: MuRong
  * @Date: 2020-02-19 21:14:29
  * @LastEditors: MuRong
- * @LastEditTime: 2020-02-21 09:47:12
+ * @LastEditTime: 2020-02-26 19:06:23
  * @Description: 校验器
- * @FilePath: \koa-ts-cms\src\core\validator.ts
+ * @FilePath: \koa-typescript-cms\src\core\validator.ts
  */
 import {
   validateOrReject,
@@ -50,7 +50,6 @@ export class Validator {
       await validateOrReject(this);
       return data;
     } catch (errors) {
-      console.log(errors);
       let errorResult: string[] = [];
       errors.forEach(error => {
         let messages: string[] = [];
@@ -58,7 +57,6 @@ export class Validator {
           messages.push(error.constraints[msg]);
         }
         errorResult = errorResult.concat(messages)
-        // errorResult[error.property] = messages;
       });
       throw new ParametersException({ msg: errorResult });
     }

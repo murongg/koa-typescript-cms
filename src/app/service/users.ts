@@ -2,9 +2,9 @@
  * @Author: MuRong
  * @Date: 2020-02-21 09:02:40
  * @LastEditors: MuRong
- * @LastEditTime: 2020-02-21 21:48:54
+ * @LastEditTime: 2020-02-26 19:35:08
  * @Description:
- * @FilePath: \koa-ts-cms\src\app\service\users.ts
+ * @FilePath: \koa-typescript-cms\src\app\service\users.ts
  */
 import Users from "../models/users";
 
@@ -53,12 +53,12 @@ class UsersService {
         openid
       }
     });
-    return user
+    return user;
   }
   static async registerByOpenid(openid: string) {
     return Users.create({
       openid
-    })
+    });
   }
 }
 

@@ -2,9 +2,9 @@
  * @Author: MuRong
  * @Date: 2020-02-19 11:10:17
  * @LastEditors: MuRong
- * @LastEditTime: 2020-02-23 16:53:48
+ * @LastEditTime: 2020-02-26 19:21:15
  * @Description: 校验器
- * @FilePath: \koa-ts-cms\src\app\validators\UsersValidator.ts
+ * @FilePath: \koa-typescript-cms\src\app\validators\UsersValidator.ts
  */
 import {
   Length,
@@ -50,12 +50,7 @@ export class RegistorValidator extends Validator {
     message: "用户名长度为3~10个字符"
   })
   nickname?: string;
-  @IsEmail(
-    {},
-    {
-      message: "电子邮箱格式错误"
-    }
-  )
+  @IsEmail({},{ message: "电子邮箱格式错误" })
   email?: string;
   @Validate(CheckPassword)
   // 至少8-16个字符，至少1个大写字母，1个小写字母和1个数字，其他可以是任意字符：

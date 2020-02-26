@@ -2,9 +2,9 @@
  * @Author: MuRong
  * @Date: 2020-02-19 13:57:10
  * @LastEditors: MuRong
- * @LastEditTime: 2020-02-23 16:52:49
+ * @LastEditTime: 2020-02-26 18:46:58
  * @Description: User Model
- * @FilePath: \koa-ts-cms\src\app\models\users.ts
+ * @FilePath: \koa-typescript-cms\src\app\models\users.ts
  */
 import bcrypt from "bcryptjs";
 import { sequelize } from "../../core/db";
@@ -17,7 +17,6 @@ import {
   AutoIncrement,
   Unique,
   Comment,
-  AllowNull
 } from "sequelize-typescript";
 @Table
 class Users extends Model<Users> {

@@ -2,13 +2,12 @@
  * @Author: MuRong
  * @Date: 2020-02-19 15:27:35
  * @LastEditors: MuRong
- * @LastEditTime: 2020-02-21 21:41:06
+ * @LastEditTime: 2020-02-26 19:17:58
  * @Description:
- * @FilePath: \koa-ts-cms\src\app\api\v1\users.ts
+ * @FilePath: \koa-typescript-cms\src\app\api\v1\users.ts
  */
 import Router from "koa-router";
 import { RegistorValidator } from "../../validators/UsersValidator";
-import Users from "../../models/users";
 import { Success, Failed } from "../../../core/exception";
 import { registerInterface } from '../../lib/interface/UsersInterface';
 import UsersService from '../../service/users';
