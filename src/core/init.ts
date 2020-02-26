@@ -2,9 +2,9 @@
  * @Author: MuRong
  * @Date: 2020-02-18 09:21:34
  * @LastEditors: MuRong
- * @LastEditTime: 2020-02-20 23:01:00
+ * @LastEditTime: 2020-02-23 19:35:56
  * @Description: 初始化各类配置
- * @FilePath: \koa-ts-cms\src\core\init.ts
+ * @FilePath: \koa-typescript-cms\src\core\init.ts
  */
 import Koa from "koa";
 import Router from "koa-router";
@@ -47,11 +47,15 @@ class InitManager {
     const path: string = `${process.cwd()}/src/app/api`;
     const files: string[] = getFiles(path);
     for (let file of files) {
+      // 获取文件后缀名
       const extention: string = file.substring(
         file.lastIndexOf("."),
         file.length
       );
       if (extention === ".ts") {
+        // 加载api文件夹下所有文件
+        // 并检测文件是否是koa的路由
+        // 如果是路由便将路由加载
         const mod: Router = require(file);
         if (mod instanceof Router) {
           // consola.info(`loading a router instance from file: ${file}`);
@@ -62,7 +66,6 @@ class InitManager {
         }
       }
     }
-    InitManager.app.use(mainRouter.routes()).use(mainRouter.allowedMethods());
   }
 
   /**
